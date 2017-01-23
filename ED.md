@@ -105,13 +105,16 @@ for i in range(1, 359, 100):
 
 ## Poniżej zostaną zaprezentowane interesujące fragmenty kodu wykorzystanego przy analizie:
 
+```python
 model.add(Convolution2D(20, 5, 5, border_mode="same",
 			input_shape=(depth, height, width)))
 		model.add(Activation("relu"))
 		model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), dim_ordering='th'))
+'''
         
 ## Dodanie warstwy do modelu sieci neuronowej
-    
+
+```python    
 model = LeNet.build(width=60, height=60, depth=1, classes=62, weightsPath=args["weights"] if args["load_model"] > 0 else None)
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
 if args["load_model"] < 0:
@@ -122,11 +125,13 @@ if args["load_model"] < 0:
 	(loss, accuracy) = model.evaluate(testData, testLabels,
 		batch_size=128, verbose=1)
 	print("[INFO] accuracy: {:.2f}%".format(accuracy * 100))
+'''
 ## Zbudowanie modelu epoka po epoce dla 62 klas i 128 podgrup klasyfikacyjnych
 
-
+```python
 probs = model.predict(testData[np.newaxis, i])<br>
 prediction = probs.argmax(axis=1)<br>
+'''
 
 ## Dokonanie przewidywania do której z klas należeć będzie obrazek. 
 
@@ -183,6 +188,7 @@ Was JC Predicted: JC<br>
 
 ## Nie udało się dokonać integracji klasyfikatora z systemem, który analizuje film. System taki został zaimplementowany, polega na tym, że wczytywany jest film, następnie analizowana jest co 120 klata (2s). Na każdą z klatek nakładana jest maska, a następnie jest ona przeszukiwana za pomocą okna przesuwnego o wielkości 60x60 pikseli co 20 pikseli w poziomie, a następnie w pionie. 
 
+```python
 for frame in test_frames:
     image = cv2.imread("./test_frames/" + str(frame)) 
     lower_red = np.array([150, 200, 150]) 
@@ -198,4 +204,5 @@ for frame in test_frames:
             prediction = probs.argmax(axis=1) 
             if int(prediction[0]) < 53: 
                 print("[INFO] Predicted: {}".format(prediction[0])) 
+'''
 ## Powyższy fragment kodu obrazuje zasadę działania takiego systemu. Niestety problemy ze środowiskiem, niezgodnościami co do wersji używanych bibliotek oraz brak odpowiedniej ilości czasu, spowodowały, że integracja ta nie przebiegła pomyślnie. 
