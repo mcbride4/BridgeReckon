@@ -110,7 +110,7 @@ model.add(Convolution2D(20, 5, 5, border_mode="same",
 			input_shape=(depth, height, width)))
 		model.add(Activation("relu"))
 		model.add(MaxPooling2D(pool_size=(2, 2), strides=(2, 2), dim_ordering='th'))
-'''
+```
         
 ## Dodanie warstwy do modelu sieci neuronowej
 
@@ -125,13 +125,13 @@ if args["load_model"] < 0:
 	(loss, accuracy) = model.evaluate(testData, testLabels,
 		batch_size=128, verbose=1)
 	print("[INFO] accuracy: {:.2f}%".format(accuracy * 100))
-'''
+```
 ## Zbudowanie modelu epoka po epoce dla 62 klas i 128 podgrup klasyfikacyjnych
 
 ```python
 probs = model.predict(testData[np.newaxis, i])<br>
 prediction = probs.argmax(axis=1)<br>
-'''
+```
 
 ## Dokonanie przewidywania do której z klas należeć będzie obrazek. 
 
@@ -204,5 +204,5 @@ for frame in test_frames:
             prediction = probs.argmax(axis=1) 
             if int(prediction[0]) < 53: 
                 print("[INFO] Predicted: {}".format(prediction[0])) 
-'''
+```
 ## Powyższy fragment kodu obrazuje zasadę działania takiego systemu. Niestety problemy ze środowiskiem, niezgodnościami co do wersji używanych bibliotek oraz brak odpowiedniej ilości czasu, spowodowały, że integracja ta nie przebiegła pomyślnie. 
