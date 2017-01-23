@@ -1,0 +1,15 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs/gst/check
+includedir=
+girdir=/home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs/gst/check
+typelibdir=/home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs/gst/check
+
+Name: GStreamer check unit testing, uninstalled
+Description: Unit testing helper library for GStreamer modules, Not Installed
+Requires: gstreamer-1.0 = 1.4.0
+Version: 1.4.0
+
+Libs: /home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs/gst/check/libgstcheck-1.0.la -lm
+Cflags: -I/home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs -I/home/ubuntu/PycharmProjects/BridgeReckon/gstreamer-1.4.0/libs
