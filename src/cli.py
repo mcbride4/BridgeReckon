@@ -14,7 +14,7 @@ from keras.utils import np_utils
 from sklearn import datasets
 from sklearn.cross_validation import train_test_split
 
-from src.pyimagesearch.cnn import LeNet
+from src.kernel.cnn import LeNet
 
 
 def parse_args():

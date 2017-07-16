@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-from src.Inputs.VideoInputWrapper import VideoInputWrapper
+from src.Inputs.VideoInputFileWrapper import VideoInputWrapper
 
 cap = VideoInputWrapper('/home/ubuntu/Desktop/MOV3_CV.avi')
 for i in range(0, 20):
