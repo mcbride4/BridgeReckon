@@ -137,6 +137,7 @@ def sliding_window(image, stepSize, windowSize):
             # yield the current window
             yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
 
+
 # print(os.listdir('.'))
 # vidcap = cv2.VideoCapture('MOV_0003.AVI')ce
 # # v = vidcap.open('MOV_0003.AVI')
