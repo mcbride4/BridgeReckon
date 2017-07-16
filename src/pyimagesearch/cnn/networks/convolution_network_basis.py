@@ -7,7 +7,7 @@ from keras.layers.core import Flatten
 from keras.layers.core import Dense
 
 
-class LeNet:
+class Convolution_Network_Basis:
     @staticmethod
     def build(width, height, depth, classes, weightsPath=None):
         # initialize the model

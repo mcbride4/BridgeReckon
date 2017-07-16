@@ -115,7 +115,7 @@ model.add(Convolution2D(20, 5, 5, border_mode="same",
 ## Dodanie warstwy do modelu sieci neuronowej
 
 ```python    
-model = LeNet.build(width=60, height=60, depth=1, classes=62, weightsPath=args["weights"] if args["load_model"] > 0 else None)
+model = Convolution_Network_Basis.build(width=60, height=60, depth=1, classes=62, weightsPath=args["weights"] if args["load_model"] > 0 else None)
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
 if args["load_model"] < 0:
 	print("[INFO] training...")

@@ -1,17 +1,19 @@
 # USAGE
-# python lenet_mnist.py --save-model 1 --weights output/lenet_weights.hdf5
-# python lenet_mnist.py --load-model 1 --weights output/lenet_weights.hdf5
+# python cli_deprecated.py --save-model 1 --weights output/lenet_weights.hdf5
+# python cli_deprecated.py --load-model 1 --weights output/lenet_weights.hdf5
 
 # import the necessary packages
-from pyimagesearch.cnn.networks import LeNet
-from sklearn.cross_validation import train_test_split
-from sklearn import datasets
-from keras.optimizers import SGD
-from keras.utils import np_utils
-import numpy as np
 import argparse
 import os
+
 import cv2
+import numpy as np
+from keras.optimizers import SGD
+from keras.utils import np_utils
+from sklearn import datasets
+from sklearn.cross_validation import train_test_split
+
+from src.pyimagesearch.cnn import LeNet
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -60,7 +62,7 @@ for card in cards:
         data.append(img)
         label.append(i)
     i += 1
-f = open("translateion.txt", 'w')
+f = open("translations.txt", 'w')
 f.write(repr(translate))
 f.close()
 # print(type(data[1]))
