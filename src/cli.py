@@ -23,12 +23,13 @@ class CliInterface():
         self.model = ModelPrep(self.args).compile()
         self.predict_test_data()
 
-    def sliding_window(image, stepSize, windowSize):
+    @staticmethod
+    def sliding_window(image, step_size, window_size):
         # slide a window across the image
-        for y in range(0, image.shape[0], int(stepSize)):
-            for x in range(0, image.shape[1], int(stepSize)):
+        for y in range(0, image.shape[0], int(step_size)):
+            for x in range(0, image.shape[1], int(step_size)):
                 # yield the current window
-                yield (x, y, image[y:y + windowSize[1], x:x + windowSize[0]])
+                yield (x, y, image[y:y + window_size[1], x:x + window_size[0]])
 
     @staticmethod
     def load_test_frames():
@@ -46,8 +47,8 @@ class CliInterface():
             mask1 = cv2.inRange(image, lower_red, upper_red)
             image = np.asarray(mask1)
 
-            for (x, y, window) in self.sliding_window(image, stepSize=windows_height / 3,
-                                                      windowSize=(windows_width, windows_height)):
+            for (x, y, window) in self.sliding_window(image, step_size=windows_height / 3,
+                                                      window_size=(windows_width, windows_height)):
 
                 if window.shape[0] == windows_height and window.shape[1] == windows_width:
                     window = window[np.newaxis, np.newaxis, :, :]
