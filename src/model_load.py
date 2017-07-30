@@ -68,7 +68,6 @@ class ModelPrep(object):
 
     def compile(self):
         data = self.data[:, np.newaxis, :, :]
-
         (self.trainData, self.testData, self.trainLabels, self.testLabels) = train_test_split(
             data / 255.0, self.label, test_size=0.1)
         self.trainLabels = np_utils.to_categorical(self.trainLabels, 62)
