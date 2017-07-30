@@ -9,12 +9,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-from keras.optimizers import SGD
-from keras.utils import np_utils
-from sklearn import datasets
-from sklearn.cross_validation import train_test_split
-
-from src.kernel.cnn import LeNet
+from src.model_load import ModelPrep
 
 
 def parse_args():
@@ -28,108 +23,8 @@ def parse_args():
                     help="(optional) path to weights file")
     args = vars(ap.parse_args())
 
-
-def data_preparation():
-    global label, data
-    cards = os.listdir("./Cards/")
-    label = []
-    data = []
-    card_names = []
-    translate = {}
-    i = 0
-    for card in cards:
-        card_name = card.replace(".png", "")
-        card_names.append(card_name)
-        files = os.listdir("./" + card_name)
-        translate[i] = card_name
-        for file in files:
-            img = cv2.imread("./" + card_name + "/" + file)
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            # print(repr(img.shape), card_name)
-            data.append(img)
-            label.append(i)
-        i += 1
-    cards = os.listdir("./NoCards/")
-    for card in cards:
-        card_name = card.replace(".png", "")
-        card_names.append(card_name)
-        files = os.listdir("./" + card_name)
-        translate[i] = card_name
-        for file in files:
-            img = cv2.imread("./" + card_name + "/" + file)
-            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            # print(repr(img.shape), card_name)
-            data.append(img)
-            label.append(i)
-        i += 1
-    f = open("translations.txt", 'w')
-    f.write(repr(translate))
-    f.close()
-    # print(type(data[1]))
-    data = np.asarray(data)
-    print(repr(data.shape))
-    dataset = datasets.base.Bunch(label=label, data=(data))
-
-def model_compilation():
-    global model
-    print("[INFO] compiling model...")
-    opt = SGD(lr=0.01)
-    model = LeNet.build(width=60, height=60, depth=1, classes=62,
-                        weightsPath=args["weights"] if args["load_model"] > 0 else None)
-    model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
-    #
-    # # only train and evaluate the model if we *are not* loading a
-    # # pre-existing model
-    if args["load_model"] < 0:
-        print("[INFO] training...")
-        model.fit(trainData, trainLabels, batch_size=128, nb_epoch=50,
-                  verbose=1)
-
-        # show the accuracy on the testing set
-        print("[INFO] evaluating...")
-        (loss, accuracy) = model.evaluate(testData, testLabels,
-                                          batch_size=128, verbose=1)
-        print("[INFO] accuracy: {:.2f}%".format(accuracy * 100))
-
-    # check to see if the model should be saved to file
-    if args["save_model"] > 0:
-        print("[INFO] dumping weights to file...")
-        model.save_weights(args["weights"], overwrite=True)
-    '''
-    # randomly select a few testing digits
-    for i in np.random.choice(np.arange(0, len(testLabels)), size=(10,)):
-        # classify the digit
-        probs = model.predict(testData[np.newaxis, i])
-        prediction = probs.argmax(axis=1)
-
-        # resize the image from a 28 x 28 image to a 96 x 96 image so we
-        # can better see it
-        image = (testData[i][0] * 255).astype("uint8")
-        image = cv2.merge([image] * 3)
-        image = cv2.resize(image, (96, 96), interpolation=cv2.INTER_LINEAR)
-        cv2.putText(image, str(prediction[0]), (5, 20),
-            cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2)
-
-        # show the image and prediction
-        print("[INFO] Predicted: {}, Actual: {}".format(prediction[0],
-            np.argmax(testLabels[i])))
-        cv2.imwrite("Digit" + str(i) + ".png", image)
-        # cv2.waitKey(0)
-    '''
 parse_args()
-data_preparation()
-data = data[:, np.newaxis, :, :]
-
-(trainData, testData, trainLabels, testLabels) = train_test_split(
-    data / 255.0, label, test_size=0.1)
-trainLabels = np_utils.to_categorical(trainLabels, 62)
-
-
-testLabels = np_utils.to_categorical(testLabels, 62)
-
-
-model_compilation()
-
+model = ModelPrep(args).compile()
 
 def sliding_window(image, stepSize, windowSize):
     # slide a window across the image
