@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+    var interval = 1000;
+      setInterval(function(){
+        $.getJSON('/snapshots/cards_difference', function(data) {
+          $("#cards").text(data.cards_differences.cards_difference);
+      })
+    }, interval);
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    {% if title %}
+    <title>{{ title }} - welcome, welcome!</title>
+    {% else %}
+    <title>Welcome to my homepage</title>
+    {% endif %}
+  </head>
+  <body>
+      <h1>Hello, man!</h1>
+      <div class="container">
+      	<div id="N"><div class="centered">{{ north }}</div></div>
+      	<div id="W"><div class="centered">{{ east }}</div></div>
+      	<div id="E"><div class="centered">{{ west }}</div></div>
+      	<div id="S"><div class="centered">{{ south }}</div></div>
+      	<div id="cards_on_the_table">CARDS ON THE TABLE:<div class="centered"><div id="cards"></div></div></div>
+      </div>
+  </body>
+</html>
+
