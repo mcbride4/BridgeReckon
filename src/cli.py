@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 
 from src.model_load import ModelPrep
+from src.Inputs.slicing_window import sliding_window
 
 
 class CliInterface():
@@ -22,14 +23,6 @@ class CliInterface():
         self.args = vars(argument_parser.parse_args())
         self.model = ModelPrep(self.args).compile()
         self.predict_test_data()
-
-    @staticmethod
-    def sliding_window(image, step_size, window_size):
-        # slide a window across the image
-        for y in range(0, image.shape[0], int(step_size)):
-            for x in range(0, image.shape[1], int(step_size)):
-                # yield the current window
-                yield (x, y, image[y:y + window_size[1], x:x + window_size[0]])
 
     @staticmethod
     def load_test_frames():
@@ -47,7 +40,7 @@ class CliInterface():
             mask1 = cv2.inRange(image, lower_red, upper_red)
             image = np.asarray(mask1)
 
-            for (x, y, window) in self.sliding_window(image, step_size=windows_height / 3,
+            for (x, y, window) in sliding_window(image, step_size=windows_height / 3,
                                                       window_size=(windows_width, windows_height)):
 
                 if window.shape[0] == windows_height and window.shape[1] == windows_width:
