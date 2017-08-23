@@ -1,0 +1,84 @@
+koncepcja jak to ma wygladac:
+
+dostajemy tablice, np 
+
+{ "cards_played" : ["2H"],
+  "board" : 1,
+  "table" : 1, index=1 },
+
+{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C"],
+  "board" : 1,
+  "table" : 1, index=2 },
+
+{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C", "9h", "QH"],
+  "board" : 1, index=3 },
+
+przed rozpoczeciem rozgrywki musimy zdecydowac, jaki jest konrakt i kto rozgrywa, zeby wiedziec ktore karty ma dziadek, kto wistuje, jakie sa atuty, zeby wiedziec kto bierze lewe.
+
+trzeba teraz rozpatrywac przypadki:
+
+1. pojawia sie nowa karta
+a) dziadka
+b) nie-dziadka
+
+2. znika jakas karta
+a) dziadka?
+b) nie-dziadka?
+czy to rozroznienie jest potrzebne? jeszcze nie wiem
+
+potrzebna jest jakas tablica/slownik kart "already played" albo cos w tym rozdaniu, kwestia czy to rozbic na 4 (dla kazdego gracza), czy nie
+
+
+bardzo wazne zalozenie:
+jezeli jakas karta zniknela, to jeszcze nie znaczy, ze zostala zagrana. musi sie ona nie pojawic w paru nastepnych klatkach raczej. jezeli sie pojawi, to gorzej.
+
+
+trzeba zakodzic to, ze karty maja byc zagrywane w lewach, czyli musza schodzic rownomiernie od kazdego z graczy.
+trzeba tez zakodzic to, kto w danym momencie ma wychodzic (kto wzial lewe).
+musi byc wiec znany na poczatku kontrakt.
+
+
+
+czyli moze karty podzielimy sobie na takie:
+niezagrane,
+kandydanci - czekajace na potwierdzenie, ze sa zagrane,
+zagrane
+
+po co w ogole robic tych kandydatow? bo jak na stole sie pojawi karta, ktora ma byc zagrana przez goscia ktory gra w kolejnosci po dziadku, to nie mozemy jej tak od razu zagrac, bo nie zniknela nam zadna karta dziadka, wiec nie mozemy nic dolozyc ze stolu, a kolejnosc zagran musi byc dobra.
+
+co jesli jakas karta z zagranych pojawi sie znowu na stole? problemik, ale na razie bedziemy zakladac, ze goscie moze sobie odkryli ostatnia lewe czy cos, bo swego rodzaju walidacja bedzie juz przy kandydatach.
+
+kiedy karta przechodzi do kandydatow?
+kiedy sie pojawia na stole (i nie jest karta dziadka)
+kiedy znika ze stolu (i jest karta dziadka)
+
+kiedy nastepuje walidacja? i jak?
+
+karty mozemy zagrywac tak, ze mozna je dokladac (kandydatow) do momentu, az nie bedzie kolej dziadka (i pozniej wszystkie dolozyc z koncem lewy), albo wszystkie na raz, jak karta dziadka zniknie.
+
+czy walidujemy to, ze karta musi byc zagrana do koloru? przydaloby sie, ale to w dalszej kolejnosci raczej. nie jest to na pewno priorytet.
+
+co w ogole ma dostawac skrypt? i jak przechowywac te dane tymczasowo?
+dostajemy co jakis czas tablice z kartami, ktore znajduja sie na stole. przydaloby sie, zeby skrypt mial dostep do calego przebiegu rozdania, zeby sobie tam mogl sprawdzac co sie dzieje. oprocz tego musi gdzies trzymac dane na temat aktualnego rozdania. czy do tego wszystkiego ma myc dostep przez api, czy przez jakas baze danych, czy jeszcze inaczej? nie wiem, w pliku czy cos. czy ten skrypt bedzie caly czas szedl i bedzie sobie to trzymal w jakims slowniku?
+
+
+na poczatek mozna by bylo napisac skrypt, ktory dostanie caly przebieg rozdania i bedzie sobie musial rozkminiac po kolei co sie stalo, kto zagral itp, dopiero pozniej przeniesc to do "real time".
+
+
+
+update:
+jak rozwiazac problem, kiedy pojawia sie nowa karta, albo znikaja jakies karty, czy nalzea one odo aktualnej, nastepnej czy poprzedniej lewy.
+gdy pojawia sie karta, trzeba sprawdzic w jakim stanie jest aktualna lewa. jezeli nie ma zadnych kart w aktualnej lewie, to ja dodajemy.
+jezeli pojawia sie na raz 2-3 karty, to probojemy je dodac wszystkie i mamy nadzieje, ze nie sa to karty tego samego gracza. jezeli sa, to na razie zwracamy blad. albo probujemy dodac do nastepnej lewy, z nadzieja , ze aktualna sie zakonczy.
+jezeli pojawi sie karta dziadka, jest traktowana osobno.
+jezeli w biezacej lewie jest juz jakas karta, sprawdzamy czy ta ktora sie pojawila, jest tego samego gracza. jezeli tak to pizda, chyba ze pojawilo sie kilka kart na raz i z pozostalych mozemy wybrac cos tak, zeby zakonczyc poprzednia lewe i zaczac nastepna.
+
+jezeli w biezacej lewie mamy juz 3 karty, musimy cos sprobowac zagrac z dziadka, bo tam chyba bedzie gorzej.
+
+jezeli zniknie ze stolu karta nie-dziadka, to chcemy zamknac lewe, ktora byla biezaca przed chwila. to powinno byc swego rodzaju potwierdzenie, ze dana karta byla zagrana, i juz lewa zostala zakryta.
+
+jezeli zniknie ze stolu karta dziadka, chcemy ja dodac do biezacej lewy.
+
+jezeli w biezacej lewie mamy 4 karty, przenosimy ja do zagranych na koniec tablicy czy czegos tam przechowujacego cala rozgrywke.
+
+

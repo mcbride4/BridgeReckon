@@ -16,7 +16,7 @@ def table():
 	print(os.getcwd())
 	with open("app/static/style.css") as f:
 		pass
-	with open("app/distribution.json") as file:
+	with open("app/helpers/json/distribution.json") as file:
 		distribution = json.load(file)
 	north = distribution['N']
 	south = distribution['S']

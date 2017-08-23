@@ -41,5 +41,5 @@ for i, td in enumerate(soup.findAll('td', attrs={'class':'w'})):
 
 print(distribution)
 
-with open("distribution.json", "w") as f:
+with open("json/distribution.json", "w") as f:
     json.dump(distribution, f)
