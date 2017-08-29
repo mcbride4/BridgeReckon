@@ -3,16 +3,51 @@
 # python cli_deprecated.py --load-model 1 --weights output/lenet_weights.hdf5
 
 import argparse
+import json
 import os
+import threading
 
 import cv2
 import numpy as np
+import requests
+
+from subprocess import Popen, PIPE
+from uuid import getnode as get_mac
 
 from src.model_load import ModelPrep
 from src.Inputs.slicing_window import sliding_window
 
 
-class CliInterface():
+class CameraThread(threading.Thread):
+    def __init__(self, args=()):
+        threading.Thread.__init__(self)
+        self.daemon = True
+        self.received_messages = args
+        self.report = {}
+
+    def run(self):
+        print(threading.currentThread().getName(), self.received_messages)
+        self.report['camera_id'] = self.received_messages
+        self.report['results'] = {"img": [12, 12, 12], "cards": "AK"}
+
+    def get_report(self):
+        return self.report
+
+
+def send_report_to_receiver(reports):
+    mac = get_mac()
+    final_report = {'pi_id': mac}
+    for report in reports:
+        try:
+            final_report[report['camera_id']] = report['results']
+            final_report[report['camera_id']] = report['results']
+        except:
+            pass
+    final_report = json.dumps(final_report)
+    r = requests.post('http://192.168.0.1', data=final_report)
+
+
+class CliInterface:
     def __init__(self, argument_parser):
         argument_parser.add_argument("-s", "--save-model", type=int, default=-1,
                                      help="(optional) whether or not model should be saved to disk")
@@ -20,9 +55,21 @@ class CliInterface():
                                      help="(optional) whether or not pre-trained model should be loaded")
         argument_parser.add_argument("-w", "--weights", type=str,
                                      help="(optional) path to weights file")
-        self.args = vars(argument_parser.parse_args())
-        self.model = ModelPrep(self.args).compile()
-        self.predict_test_data()
+        # self.args = vars(argument_parser.parse_args())
+        # self.model = ModelPrep(self.args).compile()
+        cameras = ["id_1", "id_2"]
+        threads = []
+        i = 0
+        for camera in cameras:
+            threads.append(CameraThread(args=camera))
+            threads[i].start()
+            i += 1
+        while True:
+            reports = [thread.get_report() for thread in threads]
+            send_report_to_receiver(reports)
+
+
+        # self.predict_test_data()
 
     @staticmethod
     def load_test_frames():
