@@ -25,7 +25,7 @@ class ModelPrep(object):
         i = 0
         i = self.load_cards_data(i)
         self.cards = os.listdir("./NoCards/")
-        null = self.load_cards_data(i)
+        self.load_cards_data(i)
         f = open("translations.txt", 'w')
         f.write(repr(self.translate))
         f.close()
@@ -58,18 +58,18 @@ class ModelPrep(object):
         model.save_weights(self.args["weights"], overwrite=True)
 
     def train_model(self, model):
-        model.fit(self.trainData, self.trainLabels, batch_size=128, nb_epoch=50,
+        model.fit(self.train_data, self.train_labels, batch_size=128, nb_epoch=50,
                   verbose=1)
 
         print("[INFO] evaluating...")
-        (loss, accuracy) = model.evaluate(self.testData, self.testLabels,
+        (loss, accuracy) = model.evaluate(self.test_data, self.test_labels,
                                           batch_size=128, verbose=1)
         print("[INFO] accuracy: {:.2f}%".format(accuracy * 100))
 
     def compile(self):
         data = self.data[:, np.newaxis, :, :]
-        (self.trainData, self.testData, self.trainLabels, self.testLabels) = train_test_split(
+        (self.train_data, self.test_data, self.train_labels, self.test_labels) = train_test_split(
             data / 255.0, self.label, test_size=0.1)
-        self.trainLabels = np_utils.to_categorical(self.trainLabels, 62)
-        self.testLabels = np_utils.to_categorical(self.testLabels, 62)
+        self.train_labels = np_utils.to_categorical(self.train_labels, 62)
+        self.test_labels = np_utils.to_categorical(self.test_labels, 62)
         return self.model_compilation()
