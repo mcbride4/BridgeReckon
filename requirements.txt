@@ -18,3 +18,5 @@ sk-video==1.1.8
 sklearn==0.0
 Theano==0.9.0
 tkintertable==1.2
+requests==2.18.4
+Flask==0.12.2
