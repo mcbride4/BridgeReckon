@@ -11,11 +11,12 @@ import cv2
 import numpy as np
 import requests
 
-from subprocess import Popen, PIPE
+from collections import Counter
 from uuid import getnode as get_mac
 
 from src.model_load import ModelPrep
 from src.Inputs.slicing_window import sliding_window
+from src.Inputs.VideoInputStreamWrapper import VideoInputStreamWrapper
 
 
 class CameraThread(threading.Thread):
@@ -28,7 +29,18 @@ class CameraThread(threading.Thread):
     def run(self):
         print(threading.currentThread().getName(), self.received_messages)
         self.report['camera_id'] = self.received_messages
-        self.report['results'] = {"img": [12, 12, 12], "cards": "AK"}
+        input_camera = VideoInputStreamWrapper(int(self.report['camera_id'][-1]) - 1)
+        img = input_camera.get_every_two_sec(120)
+        for (x, y, window) in sliding_window(img, step_size=60 / 3,
+                                             window_size=(60, 60)):
+
+            if window.shape[0] == 60 and window.shape[1] == 60:
+                window = window[np.newaxis, np.newaxis, :, :]
+                clone = img.copy()
+                cv2.rectangle(clone, (x, y), (x + 60, y + 60), (0, 255, 0), 2)
+                if np.mean(window) > 0.1:
+                    probs = self.model.predict(window)
+        self.report['results'] = {"img": img, "cards": Counter(probs)}
 
     def get_report(self):
         return self.report
@@ -39,7 +51,6 @@ def send_report_to_receiver(reports):
     final_report = {'pi_id': mac}
     for report in reports:
         try:
-            final_report[report['camera_id']] = report['results']
             final_report[report['camera_id']] = report['results']
         except:
             pass
@@ -55,21 +66,18 @@ class CliInterface:
                                      help="(optional) whether or not pre-trained model should be loaded")
         argument_parser.add_argument("-w", "--weights", type=str,
                                      help="(optional) path to weights file")
-        # self.args = vars(argument_parser.parse_args())
-        # self.model = ModelPrep(self.args).compile()
+        self.args = vars(argument_parser.parse_args())
+        self.model = ModelPrep(self.args).compile()
         cameras = ["id_1", "id_2"]
         threads = []
-        i = 0
-        for camera in cameras:
-            threads.append(CameraThread(args=camera))
-            threads[i].start()
-            i += 1
         while True:
-            reports = [thread.get_report() for thread in threads]
-            send_report_to_receiver(reports)
-
-
-        # self.predict_test_data()
+            i = 0
+            for camera in cameras:
+                threads.append(CameraThread(args=camera))
+                threads[i].start()
+                i += 1
+                reports = [thread.get_report() for thread in threads]
+                send_report_to_receiver(reports)
 
     @staticmethod
     def load_test_frames():
