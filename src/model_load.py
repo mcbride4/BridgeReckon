@@ -18,7 +18,8 @@ class ModelPrep(object):
         self.card_names = []
         self.cards = []
         self.translate = {}
-        self.data_preparation()
+        if args['save_model'] > 0:
+            self.data_preparation()
 
     def data_preparation(self):
         self.cards = os.listdir("./Cards/")
@@ -67,9 +68,10 @@ class ModelPrep(object):
         print("[INFO] accuracy: {:.2f}%".format(accuracy * 100))
 
     def compile(self):
-        data = self.data[:, np.newaxis, :, :]
-        (self.train_data, self.test_data, self.train_labels, self.test_labels) = train_test_split(
-            data / 255.0, self.label, test_size=0.1)
-        self.train_labels = np_utils.to_categorical(self.train_labels, 62)
-        self.test_labels = np_utils.to_categorical(self.test_labels, 62)
+        if self.args['save_model'] > 0:
+            data = self.data[:, np.newaxis, :, :]
+            (self.train_data, self.test_data, self.train_labels, self.test_labels) = train_test_split(
+                data / 255.0, self.label, test_size=0.1)
+            self.train_labels = np_utils.to_categorical(self.train_labels, 62)
+            self.test_labels = np_utils.to_categorical(self.test_labels, 62)
         return self.model_compilation()
