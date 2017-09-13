@@ -1,5 +1,4 @@
 from app import app
-import os
 import json
 import time
 from flask import Flask, jsonify, abort, request, render_template
@@ -12,11 +11,8 @@ def index():
     return render_template('index.html', title='Home', user=user)
 
 
-@app.route('/table')
+@app.route('/table', methods=['GET'])
 def table():
-    print(os.getcwd())
-    with open("app/static/style.css") as f:
-        pass
     with open("app/helpers/json/distribution.json") as f:
         distribution = json.load(f)
     north = distribution['N']
@@ -24,11 +20,17 @@ def table():
     east = distribution['E']
     west = distribution['W']
 
-    north_played = []
-    south_played = []
-    east_played = []
-    west_played = []
-    trick = []
+    return render_template('table.html', title='Table X', north=north, south=south, east=east, west=west)
+
+
+@app.route('/table/<int:table_id>/<int:board_id>', methods=['GET'])
+def table_id():
+    with open("app/helpers/json/distribution.json") as f:
+        distribution = json.load(f)
+    north = distribution['N']
+    south = distribution['S']
+    east = distribution['E']
+    west = distribution['W']
 
     return render_template('table.html', title='Table X', north=north, south=south, east=east, west=west)
 
@@ -46,7 +48,6 @@ snapshots = [
         'table': 1,
     },
 ]
-
 
 
 @app.route('/snapshots', methods=['POST'])
@@ -70,10 +71,11 @@ def get_snapshots():
 
 @app.route('/snapshots/<int:snapshot_id>', methods=['GET'])
 def get_snapshot(snapshot_id):
-    snapshot = [snapshot for snapshot in snapshots if snapshot['id'] == snapshot_id]
-    if len(snapshot) == 0:
+    snaps = [snapshot for snapshot in snapshots if snapshot['id'] == snapshot_id]
+    snaps += [snapshot for snapshot in snapshots if snapshot['id'] == snapshot_id-1]
+    if len(snaps) == 0:
         abort(404)
-    return jsonify({'snapshot': snapshot[0]})
+    return jsonify({'snapshots': snaps})
 
 
 @app.route('/snapshots/lasts', methods=['GET'])

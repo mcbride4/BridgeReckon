@@ -82,3 +82,28 @@ jezeli zniknie ze stolu karta dziadka, chcemy ja dodac do biezacej lewy.
 jezeli w biezacej lewie mamy 4 karty, przenosimy ja do zagranych na koniec tablicy czy czegos tam przechowujacego cala rozgrywke.
 
 
+
+Dobra. co dalej?
+Dostajemy rozkład, ładujemy go na stronę - to działa. Odpalamy appRunner, który co 2 sekundy pobiera z endpointu snapshots/lasts 2 ostatnie snapshoty. Jest skrypt, który co
+2 sekundy wysyła curlem na endpoint snapshots te karty, które zczytał z obrazka. Takie curle będzie wysyłać docelowo apka postawiona na raspberry.
+Teraz ten appRunner, jak dostanie te 2 snapshoty to analizuje co sie stało. Wychodzi mu, że jakieś karty zostały zagrane lub nie i wysyła to na endpoint tricks.
+Na endpoint tricks co 2 sekundy dla odmiany GETa wysyła stronka z UI, która sprawdza czy jakaś nowa lewa doszła.
+
+Jeżeli wszystko jest ok, to nie ma problemu :)
+
+Gorzej, jak coś nie jest okej. To znaczy, coś się pojebie w klasie dealHandler w ten sposób, że nie będzie w stanie zagrać lewy czy cos. Wtedy potrzebna jest interakcja człowieka.
+Myślę, że taka informacja może być przesyłana tak samo w zapytaniu POST na endpoint tricks. Jakas flaga typu "mam problem". Skrypt w JS sobie ta flage caly czas sprawdza i jak ma
+problem to wyswietla jakis smieszny komunikat. Powinna byc tam jakas opcja edycji bieżącej lewy, czy cos może. W sensie że jak dostanie info, ze jest problem to co ma biedny zrobić.
+Skrypty dalej lecą, nie ma możliwości interakcji. Gdzie ta interakcja powinna nastąpić? Chyba nie na etapie wyświetlania, tylko w klasie DealHandler. O, może jak ma problem to
+przerywa pętle i później trzeba mu dac jakoś możliwość wrócenia do ponownego wysyłania. Gorzej, jak np trochę czasu minie zanim człowiek zdąży wszystko poprawić i wtedy snapshots/lasts
+już będzie pokazywał coś nowego i on nie zdąży zagrać lewy. może powinienem brac jednak dane ze snapshots, trzymać index w pamieci i później jak człowiek coś poprawi, to wracam w
+odpowiednie miejsce? na ten moment tak to widze. czyli pętla do końca rozdania, a w środku pętla, którą może przerwać zgłoszenie błędu, wtedy jakiś input od człowieka?
+np. pokazanie kilku ostatnich snapshotow. tak sobie mysle, ze moze jednak przerzucic kod appRunnera do flaska? nie trzeba by było tylu zapytań http chyba robić, mamy wszystko lokalnie.
+Ale to jest jeszcze do zdecydowania. Na razie trzeba obsługiwać najprostsze błędy typu zagranie nie do koloru. Dodatkowo wrzucić mechanizm kto bierze lewę, kto wychodzi,
+na podstawie kontraktu mamy atuty. Do każdej lewy możemy dorzucać kolejność zagrywania kart i zwycięzcę lewy.
+
+Kwestia zasłaniania kart dziadka - co poradzić?
+jak by było wyjście z pętli - kwestia na jak długo i jak powrócić do odpowiedniego momentu.
+
+
+
