@@ -73,12 +73,15 @@ class DealHandler(object):
             return self.find_card_owner(winner_card)
 
     def set_current_trick_color(self):
-        print("current trick: {}".format(self.current_trick))
+        # print("current trick: {}".format(self.current_trick))
         self.current_trick_color = self.current_trick[self.tricks_starting_players[self.current_trick_index]][-1]
 
     def read_next_position_on_the_table(self):
+        # print("last snapshot: \n {}".format(self.cards_snapshot_last))
+        # print("last but one snapshot: \n {}".format(self.cards_snapshot_last_but_one))
         cards_showed_up = [x for x in set(self.cards_snapshot_last) if x not in set(self.cards_snapshot_last_but_one)]
         cards_hided = [x for x in set(self.cards_snapshot_last_but_one) if x not in set(self.cards_snapshot_last)]
+        # print("cards showed up: {}".format(cards_showed_up))
         if cards_hided:
             self.on_cards_hided(cards_hided)
         if cards_showed_up:
@@ -90,13 +93,15 @@ class DealHandler(object):
             if self.card_is_dummys(card):
                 dummies_cards.append(card)
         if len(dummies_cards) > 2:
-            self.raise_error("ERROR !!! at least 2 dummy's card were hided!")
+            self.raise_error("ERROR !!! at least 2 dummy's card were hided!"
+                             "\nDummies cards hided: {}\n".format(dummies_cards))
             return
         for card in dummies_cards:
             if self.add_to_trick(card):
                 self.close_trick()
             else:
-                self.add_to_next_trick(card)
+                if not self.add_to_next_trick(card):
+                    self.raise_error("Couldn't add card ({}) to the next trick".format(card))
 
     def on_cards_showed_up(self, cards_showed_up):
         dummies_cards = []
@@ -106,9 +111,11 @@ class DealHandler(object):
                 dummies_cards.append(card)
             else:
                 other_cards.append(card)
+        # print("dummies cards {}".format(dummies_cards))
+        # print("other cards {}".format(other_cards))
+        # print("distribution: {}".format(self.distribution))
         for card in other_cards:
-            added = self.add_to_trick(card)
-            if added:
+            if self.add_to_trick(card):
                 self.close_trick()
             else:
                 if not self.add_to_next_trick(card):
@@ -157,6 +164,7 @@ class DealHandler(object):
         return False
 
     def validate_addition(self, owner, card, trick="current"):
+        print("validating addition: owner {}, card {}, trick {}".format(owner, card, trick))
         if card in self.cards_played[owner]:
             self.raise_error("Card {} already played by player {}.".format(card, owner))
             return False
@@ -166,6 +174,9 @@ class DealHandler(object):
         else:
             if self.current_trick[owner]:
                 return False
+        print("validation passed for card {} for owner {} for trick {}".format(
+            card, owner, trick
+        ))
         return True
 
     def find_card_owner(self, card):
@@ -209,6 +220,7 @@ class DealHandler(object):
             self.current_snapshot_index += 1
             print("\nnext loop iteration!")
             print("current trick length: {}".format(self.current_trick_length()))
+            self.resolve_snapshots()
             self.read_next_position_on_the_table()
             print("current index: {}".format(self.current_snapshot_index))
             self.cards_snapshot_last = self.cards_seen_on_the_table[self.current_snapshot_index]
@@ -218,9 +230,18 @@ class DealHandler(object):
                 break
             time.sleep(1)
 
+    def resolve_snapshots(self):
+        # print("self resolving snapshot last {}".format(self.cards_snapshot_last))
+        self.cards_snapshot_last = [i[0] for i in self.cards_snapshot_last]
+        # print("self resolving snapshot last {}".format(self.cards_snapshot_last))
+        # print("self resolving snapshot last but one {}".format(self.cards_snapshot_last_but_one))
+        self.cards_snapshot_last_but_one = [i[0] for i in self.cards_snapshot_last_but_one]
+        # print("self resolving snapshot last but one {}".format(self.cards_snapshot_last_but_one))
+
     def get_cards_every_second(self, cards_snapshot_last, cards_snapshot_last_but_one):
         self.cards_snapshot_last = cards_snapshot_last
         self.cards_snapshot_last_but_one = cards_snapshot_last_but_one
+        self.resolve_snapshots()
         self.read_next_position_on_the_table()
 
     def deal_over(self):
@@ -243,7 +264,7 @@ def main():
             only_cards.append(cards_on_the_table["cards_played"])
     deal = dealHandler(distribution, contract, only_cards)
     deal.start_deal()
-    print(deal.tricks)
+    print("deal tricks".format(deal.tricks))
 
 
 # for i in deal.players:

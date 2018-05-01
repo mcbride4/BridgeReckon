@@ -1,136 +1,631 @@
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["2H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C", "9H", "QH"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C", "2C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C", "2C", "QC"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "AC", "JC", "3C", "2C", "QC", "8C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H", "9D"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H", "9D", "3H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H", "9D", "3H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H", "9D", "3H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "AH", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "6H", "9D", "3H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "4S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "4S", "2S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "4S", "2S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "8S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "4S", "2S", "7S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "3S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "AS", "5S", "6S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "5H", "QD", "JD", "JC", "3C", "10H", "9S", "8H"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "QD", "JD", "JC", "3C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "QD", "JD", "JC", "3C", "5C", "KC", "4C"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "QD", "JD", "JC"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7H", "QD", "JD", "JC", "KH", "10C", "7D"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "JD", "JC"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "JD", "JC", "3D", "AD"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "JD", "JC", "3D", "AD", "JS"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "JC"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "JC", "6C", "2D", "QS"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "QD", "4D", "KS", "KD"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "JH", "7C", "10D", "8D"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : ["10S", "5D", "9C", "6D"], "board" : 1, "table" : 1 }' http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : [], "board" : 1, "table" : 1}'  http://localhost:5000/snapshots
-sleep 2
-curl -i -H "Content-Type: application/json" -X POST -d '{ "cards_played" : [], "board" : 1, "table" : 1}'  http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["9H", 3], ["QH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3], ["8C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3], ["AC", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3], ["7S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["AS", 3], ["5S", 3], ["6S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["TH", 3], ["9S", 3], ["8H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["5C", 3], ["KC", 3], ["4C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["KH", 3], ["TC", 3], ["7D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3], ["JS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JC", 3], ["6C", 3], ["2D", 3], ["QS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["4D", 3], ["KS", 3], ["KD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7C", 3], ["TD", 3], ["8D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5D", 3], ["9C", 3], ["6D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["9H", 3], ["QH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3], ["8C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3], ["AC", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3], ["7S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["AS", 3], ["5S", 3], ["6S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["TH", 3], ["9S", 3], ["8H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["5C", 3], ["KC", 3], ["4C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["KH", 3], ["TC", 3], ["7D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3], ["JS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JC", 3], ["6C", 3], ["2D", 3], ["QS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["4D", 3], ["KS", 3], ["KD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7C", 3], ["TD", 3], ["8D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5D", 3], ["9C", 3], ["6D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["9H", 3], ["QH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["2H", 3], ["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["4H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["AC", 3], ["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["2C", 3], ["QC", 3], ["8C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3], ["AC", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["6H", 3], ["9D", 3], ["3H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["AH", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["4S", 3], ["2S", 3], ["7S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["8S", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["AS", 3], ["5S", 3], ["6S", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["3S", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["TH", 3], ["9S", 3], ["8H", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["5H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3], ["3C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JC", 3], ["3C", 3], ["5C", 3], ["KC", 3], ["4C", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7H", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["KH", 3], ["TC", 3], ["7D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["7H", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["JD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JD", 3], ["JC", 3], ["3D", 3], ["AD", 3], ["JS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3], ["QD", 3], ["JC", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["QD", 3], ["JC", 3], ["6C", 3], ["2D", 3], ["QS", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3], ["JH", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["QD", 3], ["4D", 3], ["KS", 3], ["KD", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["JH", 3], ["7C", 3], ["TD", 3], ["8D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["5D", 3], ["9C", 3], ["6D", 3]], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [["TS", 3]], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+sleep 1
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 23, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+curl -i -H "Content-Type: application/json" -X POST -d '{ "cards" : [], "camera_id" : 57, "raspberry_id" : 101 }' http://localhost:5000/snapshots
+
+	

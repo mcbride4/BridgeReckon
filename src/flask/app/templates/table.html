@@ -2,84 +2,104 @@
   <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
-    var interval = 2000;
-      /*setInterval(function(){
-        $.getJSON('/snapshots/cards_difference', function(data) {
-          if(data.cards_differences.cards_difference.length != 0){
-            console.log("switching view");
-            $("#cards").text(data.cards_differences.cards_difference);
+    var interval = 1000;
+    segment_data = {
+      board_numbers: 10,
+      distribution_for_each_board: "somewhere"
+    }
+
+    index = 0;
+    board_number = 1
+    table_id = 1
+    players = ["N", "E", "S", "W"];
+  function getDistributionForNextBoard(){
+      $.getJSON('/distribution/' + board_number, function(data) {
+        players.forEach(function(player){
+          console.log(document.getElementById(player))
+          console.log(document.getElementById(player).childNodes[0])
+          console.log(document.getElementById(player).childNodes[0].innerHTML)
+          document.getElementById(player).childNodes[0].innerHTML = data[player]
+        })
+      })
+    }
+
+
+  $(document).ready(function() {
+    board_number = parseInt(document.getElementById('table_id').innerHTML);
+
+
+  
+    setInterval(function(){
+      $.getJSON('/tricks/' + table_id + '/' + board_number, function(data) {
+        if (index < data.tricks.trick_index){
+          cards_in_the_middle = ""
+          players.forEach(function(player){
+              cards_in_the_middle += data.tricks.tricks[player][index];
+              cards_in_the_middle += ", ";
+          })
+          $("#cards").text(cards_in_the_middle);
+
+          var tableRef = document.getElementById('tabela');
+
+          var newRow   = tableRef.insertRow(tableRef.rows.length);
+
+          var newCell1  = newRow.insertCell(0);
+          var newCell2  = newRow.insertCell(1);
+          var newCell3  = newRow.insertCell(2);
+          var newCell4  = newRow.insertCell(3);
+          var newCell5  = newRow.insertCell(4);
+
+          var newText1  = document.createTextNode(index+1);
+          var newText2  = document.createTextNode(data.tricks.tricks["N"][index]);
+          var newText3  = document.createTextNode(data.tricks.tricks["E"][index]);
+          var newText4  = document.createTextNode(data.tricks.tricks["S"][index]);
+          var newText5  = document.createTextNode(data.tricks.tricks["W"][index]);
+
+          newCell1.appendChild(newText1);
+          newCell2.appendChild(newText2);
+          newCell3.appendChild(newText3);
+          newCell4.appendChild(newText4);
+          newCell5.appendChild(newText5);
+
+          if(index == 0 && board_number == 1){
+              players.forEach(function(player) {
+                  var el = document.getElementById(player)
+                  child = el.childNodes[0];
+                  console.log(child.innerHTML)
+                  console.log(eval(child.innerHTML))
+                  console.log(el)
+                  arr = eval(child.innerHTML);
+                  ind = arr.indexOf(data.tricks.tricks[player][index])
+                  arr.splice(ind, 1);
+                  arr = arr.join(", ");
+                  child.innerHTML = arr
+              });
           }
           else{
-            console.log("else");
+              players.forEach(function(player) {
+                  var el = document.getElementById(player)
+                  child = el.childNodes[0];
+                  arr = child.innerHTML.split(",");
+                  ind = arr.indexOf(data.tricks.tricks[player][index])
+                  arr.splice(ind, 1);
+                  child.innerHTML = arr
+              });
           }
 
-      })
-    }, interval);*/
+          index +=1
+          if(index == 13){
+            board_number += 1;
+  
+            getDistributionForNextBoard();
+            index = 0
 
-      index = 0;
-      setInterval(function(){
-        $.getJSON('/tricks/1/1', function(data) {
-            if (index < data.tricks.trick_index){
-                players = ["N", "E", "S", "W"];
-                s = ""
-                players.forEach(function(entry){
-                    s += data.tricks.tricks[entry][index];
-                    s += ", ";
-                })
-                $("#cards").text(s);
 
-                var tableRef = document.getElementById('tabela');
-
-                var newRow   = tableRef.insertRow(tableRef.rows.length);
-
-                var newCell1  = newRow.insertCell(0);
-                var newCell2  = newRow.insertCell(1);
-                var newCell3  = newRow.insertCell(2);
-                var newCell4  = newRow.insertCell(3);
-                var newCell5  = newRow.insertCell(4);
-
-                var newText1  = document.createTextNode(index+1);
-                var newText2  = document.createTextNode(data.tricks.tricks["N"][index]);
-                var newText3  = document.createTextNode(data.tricks.tricks["E"][index]);
-                var newText4  = document.createTextNode(data.tricks.tricks["S"][index]);
-                var newText5  = document.createTextNode(data.tricks.tricks["W"][index]);
-
-                newCell1.appendChild(newText1);
-                newCell2.appendChild(newText2);
-                newCell3.appendChild(newText3);
-                newCell4.appendChild(newText4);
-                newCell5.appendChild(newText5);
-
-                if(index == 0){
-                    players.forEach(function(entry) {
-                        var el = document.getElementById(entry)
-                        child = el.childNodes[0];
-                        arr = eval(child.innerHTML);
-                        ind = arr.indexOf(data.tricks.tricks[entry][index])
-                        arr.splice(ind, 1);
-                        arr = arr.join(", ");
-                        child.innerHTML = arr
-                    });
-                }
-                else{
-                    players.forEach(function(entry) {
-                        var el = document.getElementById(entry)
-                        child = el.childNodes[0];
-                        arr = child.innerHTML.split(",");
-                        ind = arr.indexOf(data.tricks.tricks[entry][index])
-                        arr.splice(ind, 1);
-                        child.innerHTML = arr
-                    });
-                }
-
-                index +=1
-            }
-            console.log(data);
-            data.tricks.tricks
-            data.tricks.trick_index
+          }
+        }
       })
     }, interval);
-    </script>
+  });  
+  </script>
 
     <link rel="stylesheet" type="text/css" href="../static/style.css">
     {% if title %}
@@ -90,6 +110,7 @@
   </head>
   <body>
       <h1>Hello, man!</h1>
+      <h1>Table <span id="table_id">{{ table_id }}</span></h1>
       <div class="container">
       	<div id="N"><div class="centered">{{ north }}</div></div>
       	<div id="W"><div class="centered">{{ east }}</div></div>
