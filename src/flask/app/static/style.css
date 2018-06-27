@@ -1,7 +1,30 @@
+body {
+    background: #666;
+}
 .container{
-	width: 100%;
-	height: 50%;
+	width: 70%;
+	height: 60%;
 	/*position: absolute;*/
+	border: 1px solid black;
+	background: green;
+	display: inline-block;
+}
+.container-right{
+	width: 27%;
+	height: 60%;
+	/*position: absolute;*/
+	border: 1px solid black;
+	background: #cea667;
+	float:right;
+	padding: 10px;
+}
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 .container2{
     width: 99%;
@@ -12,38 +35,127 @@
 
 }
 #N{
-	height:33%;
-	color: blue;
+	height:95%;
 	position: relative;
 	float:left;
-	width:100%;
+	width:30%;
+	margin-left:35%;
 	text-align: center;
-	border: 2px solid red;
+	border: 1px solid white;
+	background: #AAA;
 }
-#S{
-	height:33%;
-	color: blue;
+#cardsN{
+	height:95%;
 	position: relative;
 	float:left;
-	width:100%;
+	width:30%;
+	margin-left:35%;
+	border: 1px solid white;
+	background: #AAA;
+
+}
+
+#textCardsN, #textCardsS, #textCardsE, #textCardsW {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.7em;
+	transform: translateY(40%);
+}
+#imgCardsN, #imgCardsS, #imgCardsE, #imgCardsW{
+	transform: translateY(60%);
+}
+
+
+
+#N > table > tbody > tr > td {
+    font-size: 1.8em;
+}
+#S > table > tbody > tr > td {
+    font-size: 1.8em;
+}
+#E > table > tbody > tr > td {
+    font-size: 1.8em;
+}
+#W > table > tbody > tr > td {
+    font-size: 1.8em;
+}
+
+#N > table > tbody > tr > th {
+    font-size: 1.2em;
+    border: 1px solid white;
+    background: #777;
+}
+#S > table > tbody > tr > th {
+    font-size: 1.2em;
+    border: 1px solid white;
+    background: #777;
+}
+#E > table > tbody > tr > th {
+    font-size: 1.2em;
+    border: 1px solid white;
+    background: #777;
+}
+#W > table > tbody > tr > th {
+    font-size: 1.2em;
+    border: 1px solid white;
+    background: #777;
+}
+
+#S{
+	height:95%;
+	position: relative;
+	float:left;
+	width:30%;
+	margin-left:35%;
 	text-align: center;
-	border: 2px solid red;
+	border: 1px solid white;
+	background: #AAA;
+}
+#cardsS{
+	height:95%;
+	position: relative;
+	float:left;
+	width:30%;
+	margin-left:35%;
+	text-align: center;
+	border: 1px solid white;
+	background: #AAA;
+
 }
 #E{
-	height:33%;
-	color: blue;
+	height:95%;
 	position: relative;
 	float:right;
 	width:30%;
+	border: 1px solid white;
+	background: #AAA;
+}
+#cardsE{
+	height:95%;
+	position: relative;
+	float:right;
+	width:30%;
+	border: 1px solid white;
+	background: #AAA;
 }
 #W{
-	height:33%;
-	color: blue;
+	height:95%;
 	position: relative;
 	float:left;
 	width:30%;
 	text-align: center;
+	border: 1px solid white;
+	background: #AAA;
 
+}
+#cardsW{
+	height:95%;
+	position: relative;
+	float:left;
+	width:30%;
+	text-align: center;
+	border: 1px solid white;
+	background: #AAA;
 }
 .centered{
 
@@ -54,13 +166,12 @@
 	position: absolute;
 }
 #cards_on_the_table{
-	height: 30%;
-	color: purple;
+	height: 95%;
 	position: relative;
 	float: left;
-	width: 40%;
+	width: 38%;
 	text-align: center;
-	padding-top: 5%;
+	padding-left:0.5%;
 }
 
 #tabela{
@@ -68,4 +179,9 @@
 }
 .tricks{
     text-align: center;
+}
+
+.bridge-row{
+    width: 100%;
+    height: 33%;
 }

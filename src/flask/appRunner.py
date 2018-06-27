@@ -2,10 +2,11 @@ import json
 from app.helpers.dealHandler import DealHandler
 import requests
 import time
+import random
 
 distribution_filename = "app/helpers/json/distribution.json"
 distribution_filename = "app/helpers/json/distribution_vugraph.lin.json"
-contract = "2SE"
+contract = "2HE"
 with open(distribution_filename) as file:
     # distribution = json.load(file)
     # print(file.read())
@@ -64,9 +65,25 @@ for board_id in range(1, segment_length+1):
                 time.sleep(0.2)
                 continue
         else:
+            uid = random.getrandbits(32)
+            errors_json = {
+                "errors": deal.error_message,
+                "board": board_id,
+                "table": table_id,
+                "uid": uid,
+                "tricks": deal.tricks
+            }
+            r = requests.post("http://127.0.0.1:5000/errors", data=json.dumps(errors_json), headers=headers)
             print(deal.error_message)
-            tricks_from_user = input("Put deal.tricks here. Actual value = {} \n".format(json.dumps(deal.tricks)))
-            deal.tricks = json.loads(tricks_from_user)
+            while True:
+                time.sleep(1)
+                r = requests.get("http://127.0.0.1:5000/errorSolution/{}".format(uid), headers=headers)
+                print(r.json())
+                if r.status_code == 200:
+                    tricks_from_user = r.json()['tricks']
+                    deal.tricks = json.loads(tricks_from_user)
+                    break
+
             deal.error = 0
         print("Current trick: {}".format(deal.current_trick))
         print("Next trick: {}".format(deal.next_trick_candidates))

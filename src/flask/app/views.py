@@ -17,7 +17,8 @@ client = MongoClient('localhost', 27017)
 db = client.bridge
 snapshots = db.snapshots
 tricks = db.tricks
-
+errors = db.errors
+errorSolutions = db.errorSolutions
 snapshots.insert_one(
     {
         'id': get_next_snapshot_id("a", "f"),
@@ -185,6 +186,80 @@ def post_tricks():
         del board['_id']
     return jsonify({'tricks': board}), 201
 
+
+@app.route('/errors/<int:table_id>/<int:board>', methods=['GET'])
+def get_errors(table_id, board):
+    error = errors.find({"table": table_id, "board": str(board)})
+    ret = []
+    for e in error:
+        ret.append({
+            'uid': e['uid'],
+            'board': e['board'],
+            'table': e['table'],
+            'tricks': e['tricks'],
+            'errors': e['errors']
+        })
+    try:
+        return jsonify({'errors': ret})
+    except IndexError:
+        abort(404)
+
+
+@app.route('/errors', methods=['POST'])
+def post_errors():
+    if not request.json:
+        abort(400)
+    error = {
+        # 'id': tricks.find_one({"id": 1}, {"_id": 0}),  # tricks[-1]['id']+1,
+        'errors': request.json['errors'],
+        'board': request.json.get('board', 1),
+        'table': request.json.get('table', 1),
+        'tricks': request.json['tricks'],
+        'uid': str(request.json['uid'])
+    }
+    print(error)
+    print("ERROR is going to be here?????")
+    errors.insert_one(error)
+    print("or maybe here ???? is going to be here?????")
+    del error["_id"]
+    return jsonify({'errors': error}), 201
+
+
+@app.route('/errorSolution/<int:uid>', methods=['GET'])
+def get_error_solution(uid):
+    error_solution = errorSolutions.find({"uid": uid})
+    try:
+        return jsonify({'errorSolution': error_solution[0]})
+    except IndexError:
+        abort(404)
+
+
+@app.route('/errorSolution', methods=['POST'])
+def post_error_solution():
+    if not request.json:
+        abort(400)
+    error_solution = {
+        # 'id': tricks.find_one({"id": 1}, {"_id": 0}),  # tricks[-1]['id']+1,
+        'errorSolution': request.json['errorSolution'],
+        'board': request.json.get('board', 1),
+        'table': request.json.get('table', 1),
+        'tricks': request.json['tricks'],
+        'uid': request.json['uid']
+    }
+    errorSolutions.insert_one(error_solution)
+    return jsonify({'errorSolution': error_solution}), 201
+
+
+@app.route('/tables', methods=['GET'])
+def get_all_tables():
+    with open("app/helpers/json/distribution.json") as f:
+        distribution = json.load(f)
+    north = distribution['N']
+    south = distribution['S']
+    east = distribution['E']
+    west = distribution['W']
+
+    return render_template('table.html', title='Table X', north=north, south=south, east=east, west=west)
 
 '''
 @app.route('/snapshots/cards_played', methods=['GET'])

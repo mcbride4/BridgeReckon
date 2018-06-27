@@ -254,7 +254,7 @@ def main():
     distribution_filename = "json/distribution.json"
     with open(distribution_filename) as file:
         distribution = json.load(file)
-    contract = "2SE"
+    contract = "2HE"
     cards_on_the_table_filename = "json/deal.json"
     only_cards = []
     with open(cards_on_the_table_filename) as file:
@@ -262,7 +262,7 @@ def main():
             lines = [line] + list(itertools.islice(file, 2))
             cards_on_the_table = json.loads(''.join(lines))
             only_cards.append(cards_on_the_table["cards_played"])
-    deal = dealHandler(distribution, contract, only_cards)
+    deal = DealHandler(distribution, contract, only_cards)
     deal.start_deal()
     print("deal tricks".format(deal.tricks))
 

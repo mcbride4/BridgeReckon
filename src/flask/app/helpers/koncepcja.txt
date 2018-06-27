@@ -107,3 +107,47 @@ jak by było wyjście z pętli - kwestia na jak długo i jak powrócić do odpow
 
 
 
+algorytm wykrywania błędów
+
+
+najpierw dla pietwszej lewy wybieramy goscia który zaczyna,
+jak zobaczymy jego kartę, to mamy kolor pierwszej lewy.
+teraz dla każdej dokładanej karty sprawdzamy, czy kolor się zgadza
+mozna to robić trochę inaczej - dopiero w momencie zakrywania się lewy.
+żeby to było uniwersalne dla następnym lew - w których zaczynać może dziadek i wtedy nie znamy na początku koloru lewy.
+jak to sprawdzamy to najpierw sprawdzamy czy gosc dał do koloru, a jeżeli nie, to sprawdzamy czy miał kartę do koloru.
+jak wszyscy dołożyli dobrze, to sprawdzamy która karta jest najwyższa,
+jak nie, a mieli to trzeba zrobić przerwę na interakcję człowieka
+
+
+
+-------------------------
+jak w ogóle działa ten program:
+views.py - serwer we flasku, odpalamy przez "python ~/git/BridgeReckon/src/flask/run.py"
+appRunner.py - skrypt odpytujący w pętli endpoint /snapshots serwera we flasku (views.py)
+z tego endpointa dostaje 2 ostatnie snapshoty, porównuje je i na tej podstawie wyciąga informację,
+czy zostały pomiędzy tymi snapshotami zagrane jakieś karty. Jeśli mu wyjdzie, że tak, to wysyła
+POSTa do tego samego serwera (views.py) na endpoint /tricks.
+W takzwanym międzyczasie wchodzimy sobie przez przeglądarkę na localhost:5000/table/<nr_stolu>
+Za wyświetlane tam dane odpowiada template table.html. W nim jest wywoływana co sekundę funkcja wysyłająca
+zapytanie na endpoint /tricks/<nr_stolu>/<nr_rozdania> i wyświetlająca te dane. Zagrywane w bieżącej lewie karty
+są widoczne na środku stołu, oprócz tego na dole jest historia każdego rozdania i każdej lewy, zawodnicy mają
+wyświetlone karty, które aktualnie mają w ręce (z każdą lewą ubywa im po jednej karcie).
+W tym panelu trzeba dopracować wygląd, zrobić historię z podziałem na konkretne rozdania.
+Dodatkowo zrobić miejsce na wyświetlenie panelu w przypadku kiedy skrypt appRunner.py zwróci błąd. W takim
+przypadku powinna zostać wyświetlona zawartość zmiennej "error_message" - tam pojawi się informacja na temat
+błędu, przez który program przerwał działanie oraz aktualny stan lew w rozdaniu. Jest to zwykły JSON z 4
+13-elementowymi listami dla zawodników N, E, S, W. W pierwszej wersji użytkownik może przeklejać ten JSON i
+uzupełniać odpowiednie miejsca w tablicy, w dalszym etapie powinien mieć możliwość wyklikania którą kartę zagrać
+w której lewie dla każdego z graczy. Trzeba mu też dać podgląd ostatnich klatek video ze stołu.
+W ogóle te klatki teraz chyba nie są przesyłane ani odbierane nigdzie. Powinny one być wysyłane przez apkę, która
+jest odpalana na raspberryPi i zapisywana do bazy mongoDb. Ta baza to w ogóle jest postawiona tak na słowo honoru,
+trzeba to zdecydowanie dopracować i ogarnąć czy te dane które mają być zapisywane są zapisywane i czy są dobrze
+zapisywane. Powinny tam być takie informacje: nr stołu, nr rozdania, zagrane karty w danej lewie, nr lewy, obrazek.
+
+Struktura bazy danych. W tym momencie są 2 kolekcje: snapshots i tricks. Trzeba zdecydować jaki
+zakres mają ogarniać te kolekcje. Czy tworzymy osobne kolekcje na każde a) rozdanie, b) segment rozdań,
+c) kilka segmentów rozdań, d) wydarzenie, e) jedna kolekcja na zawsze.
+Jak rozróżniać dane, które wysyłamy do serwera i odbieramy? Mamy rozróżnienie z raspberry_id, camera_id,
+przydałby się jeszcze np. timestamp, nr rozdania dla którego pobieramy dane, nr stołu (to akurat powinno
+być powiązane z raspberry_id w jakiś sposób).
