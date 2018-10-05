@@ -1,0 +1,395 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+
+    var error_status = 0;
+    var currently_resolving_problem = 0
+    var interval = 1000;
+    segment_data = {
+      board_numbers: 10,
+      distribution_for_each_board: "somewhere"
+    }
+
+    index = 0;
+    board_number = 1
+    table_id = 1
+    players = ["N", "E", "S", "W"];
+    suites = ["S", "H", "D", "C"]
+
+  function getOnesSuitCardsData(player, suit, dataCards){
+      myCards = dataCards
+
+      myCards = myCards.filter(word => word[1] == suit);
+      return displaySuitData(myCards);
+  }
+
+  function displaySuitData(cards){
+      var ret = ''
+      for (var i = 0; i < cards.length; i += 1) {
+          ret += cards[i].charAt(0);
+      }
+      return ret;
+  }
+  function getDistributionForNextBoard(){
+      $.getJSON('/distribution/' + board_number, function(data) {
+
+      playersNames = ['N', 'S', 'E', 'W'];
+      playersSuites = ['S', 'H', 'D', 'C'];
+
+      playersNames.forEach(function(player){
+        playersSuites.forEach(function(suit){
+          el = document.getElementById(player + suit)
+          el.innerHTML = getOnesSuitCards(player, suit, data[player])
+        })
+      })
+
+
+
+
+//        players.forEach(function(player){
+//          document.getElementById(player).childNodes[0].innerHTML = data[player]
+//        })
+      })
+    }
+
+  function sendSolution(uid){
+      data = {
+        'errorsolution': JSON.stringify({"W": document.getElementById("error_solutionW").value,
+                                  "N": document.getElementById("error_solutionN").value,
+                                  "E": document.getElementById("error_solutionE").value,
+                                  "S": document.getElementById("error_solutionS").value,
+        }),
+        'board': document.getElementById("error_board").innerHTML,
+        'table': document.getElementById("error_table").innerHTML,
+        'tricks': JSON.stringify({"W": document.getElementById("error_solutionW").value,
+                                  "N": document.getElementById("error_solutionN").value,
+                                  "E": document.getElementById("error_solutionE").value,
+                                  "S": document.getElementById("error_solutionS").value,
+        }),
+        'uid': document.getElementById("error_uid").innerHTML
+      };
+      $.post('/errorsolutions', data, function(response) {
+          // Do something with the request
+          console.log("request sent");
+          console.log(response);
+          currently_resolving_problem = 0;
+          error_status = 0;
+          document.getElementById("error_solution").empty();
+          document.getElementById("error_container").style.visibility = "hidden";
+      }, 'json');
+
+      var myNode = document.getElementById("container5");
+      while (myNode.firstChild) {
+          myNode.removeChild(myNode.firstChild);
+      }
+      myNode = document.getElementById("container6");
+      while (myNode.firstChild) {
+          myNode.removeChild(myNode.firstChild);
+      }
+  }
+
+
+  $(document).ready(function() {
+    board_number = parseInt(document.getElementById('table_id').innerHTML);
+
+    setInterval(function(){
+
+      if (!currently_resolving_problem) {
+
+      $.getJSON('/errors/' + table_id + '/' + board_number, function(data) {
+        if(data['errors'].length > 0){
+            error_status = 1
+            currently_resolving_problem = 1
+            console.log("error status: " + error_status)
+            error_msg = data['errors'][0]['errors'];
+            error_tricks = data['errors'][0]['tricks'];
+            error_uid = data['errors'][0]['uid'];
+            error_table = data['errors'][0]['table'];
+            error_board = data['errors'][0]['board'];
+            error_path1 = data['errors'][0]['path1'];
+            error_path2 = data['errors'][0]['path2'];
+            error_path3 = data['errors'][0]['path3'];
+            error_path4 = data['errors'][0]['path4'];
+
+            document.getElementById("error_container").style.visibility = "visible"
+            document.getElementById("error_msg").innerHTML = error_msg
+            document.getElementById("error_tricks").innerHTML = JSON.stringify(error_tricks)
+            document.getElementById("error_table").innerHTML = error_table
+            document.getElementById("error_board").innerHTML = error_board
+            document.getElementById("error_uid").innerHTML = error_uid
+            document.getElementById("error_solutionW").innerHTML = JSON.stringify(error_tricks["W"])
+            document.getElementById("error_solutionN").innerHTML = JSON.stringify(error_tricks["N"])
+            document.getElementById("error_solutionE").innerHTML = JSON.stringify(error_tricks["E"])
+            document.getElementById("error_solutionS").innerHTML = JSON.stringify(error_tricks["S"])
+
+            var img3 = document.createElement("img");
+            img3.setAttribute("src", error_path3);
+            img3.setAttribute("height", "288");
+            img3.setAttribute("width", "512");
+            document.getElementById('container5').appendChild(img3);
+
+            var img4 = document.createElement("img");
+            img4.setAttribute("src", error_path4);
+            img4.setAttribute("height", "288");
+            img4.setAttribute("width", "512");
+            document.getElementById('container6').appendChild(img4);
+
+        }
+
+      })
+
+      }
+
+      else{
+
+      }
+
+      if(!error_status){
+
+
+      $.getJSON('/tricks/' + table_id + '/' + board_number, function(data) {
+        console.log(data)
+        if (index < data.tricks.trick_index){
+
+          var tableRef = document.getElementById('tabela');
+
+          var newRow   = tableRef.insertRow(tableRef.rows.length);
+
+          var newCell1  = newRow.insertCell(0);
+          var newCell2  = newRow.insertCell(1);
+          var newCell3  = newRow.insertCell(2);
+          var newCell4  = newRow.insertCell(3);
+          var newCell5  = newRow.insertCell(4);
+
+          var newText1  = document.createTextNode(index+1);
+          var newText2  = document.createTextNode(data.tricks.tricks["N"][index]);
+          var newText3  = document.createTextNode(data.tricks.tricks["E"][index]);
+          var newText4  = document.createTextNode(data.tricks.tricks["S"][index]);
+          var newText5  = document.createTextNode(data.tricks.tricks["W"][index]);
+
+          newCell1.appendChild(newText1);
+          newCell2.appendChild(newText2);
+          newCell3.appendChild(newText3);
+          newCell4.appendChild(newText4);
+          newCell5.appendChild(newText5);
+
+              players.forEach(function(player){
+                onePlayersCards = []
+                suites.forEach(function(suit){
+                  var el = document.getElementById(player + suit)
+                  array = el.childNodes[0].nodeValue.split("")
+                  for(var i=0;i<array.length;i++){
+                      array[i]=array[i] + suit;
+                  }
+                  onePlayersCards = onePlayersCards.concat(array)
+                })
+                console.log("player " + player + " cards " + onePlayersCards)
+                console.log(onePlayersCards)
+                var card_played = data.tricks.tricks[player][index] // 7S
+                var el = document.getElementById(player + card_played[1])
+                console.log(el.innerHTML)
+                child = el.childNodes[0];
+                if(child.nodeValue){
+                    var newNodeValue = child.nodeValue.replace(card_played[0], "")
+                    child.nodeValue = newNodeValue
+                }
+                img = document.getElementById("imgCards" + player)
+                img.src = "../static/" + card_played[1] + ".png"
+
+                $("#textCards" + player).text(card_played[0]);
+
+
+              })
+
+          index +=1
+          if(index == 13){
+            board_number += 1;
+  
+            getDistributionForNextBoard();
+            index = 0
+
+
+          }
+
+        }
+      })
+      }
+    }, interval);
+  });  
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    {% if title %}
+    <title>{{ title }} - welcome, welcome!</title>
+    {% else %}
+    <title>Welcome to my homepage</title>
+    {% endif %}
+  </head>
+  <body>
+      <h1>Hello, man!</h1>
+      <h1>Table <span id="table_id">{{ table_id }}</span></h1>
+      <div class="container">
+        <div class="bridge-row">
+      	  <div id="N">
+            <table id="tabelaNorth">
+              <col width="30">
+              <col width="320">
+              <tr>
+                <th>N</th>
+                <th>Maks Chodacki</th>
+              </tr>
+              <tr><td><img src="../static/S.png" alt="S" width="30" height="30"></td><td id="NS"></td></tr>
+              <tr><td><img src="../static/H.png" alt="H" width="30" height="30"></td><td id="NH"></td></tr>
+              <tr><td><img src="../static/D.png" alt="D" width="30" height="30"></td><td id="ND">!diamond </td></tr>
+              <tr><td><img src="../static/C.png" alt="C" width="30" height="30"></td><td id="NC">!club </td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="bridge-row">
+      	  <div id="W">
+            <table id="tabelaWest">
+              <col width="30">
+              <col width="320">
+              <tr>
+                <th>W</th>
+                <th>Dawid Rymarczyk</th>
+              </tr>
+              <tr><td><img src="../static/S.png" alt="S" width="30" height="30"></td><td id="WS"></td></tr>
+              <tr><td><img src="../static/H.png" alt="H" width="30" height="30"></td><td id="WH"></td></tr>
+              <tr><td><img src="../static/D.png" alt="D" width="30" height="30"></td><td id="WD"></td></tr>
+              <tr><td><img src="../static/C.png" alt="C" width="30" height="30"></td><td id="WC"></td></tr>
+            </table>
+          </div>
+      	  <div id="cards_on_the_table">
+              <div class="bridge-row">
+                <div id="cardsN">
+                <img id="imgCardsN" src="../static/C.png" alt="S" width="22" height="22"><div id="textCardsN"></div>
+                </div>
+              </div>
+              <div class="bridge-row">
+                <div id="cardsW">
+                <img id="imgCardsW" src="../static/C.png" alt="S" width="22" height="22"><div id="textCardsW"></div>
+                </div>
+                <div id="cardsE">
+                <img id="imgCardsE" src="../static/C.png" alt="S" width="22" height="22"><div id="textCardsE"></div>
+                </div>
+              </div>
+              <div class="bridge-row">
+                <div id="cardsS">
+                <img id="imgCardsS" src="../static/C.png" alt="S" width="22" height="22"><div id="textCardsS"></div>
+                </div>
+              </div>
+          </div>
+      	  <div id="E">
+            <table id="tabelaEast">
+              <col width="30">
+              <col width="320">
+              <tr>
+                <th>E</th>
+                <th>East Player</th>
+              </tr>
+              <tr><td><img src="../static/S.png" alt="S" width="30" height="30"></td><td id="ES"></td></tr>
+              <tr><td><img src="../static/H.png" alt="H" width="30" height="30"></td><td id="EH"></td></tr>
+              <tr><td><img src="../static/D.png" alt="D" width="30" height="30"></td><td id="ED"></td></tr>
+              <tr><td><img src="../static/C.png" alt="C" width="30" height="30"></td><td id="EC"></td></tr>
+            </table>
+          </div>
+      	</div>
+      	<div class="bridge-row">
+      	  <div id="S">
+            <table id="tabelaSouth">
+              <col width="30">
+              <col width="320">
+              <tr>
+                <th>S</th>
+                <th>South Player</th>
+              </tr>
+              <tr><td><img src="../static/S.png" alt="S" width="30" height="30"></td><td id="SS"></td></tr>
+              <tr><td><img src="../static/H.png" alt="H" width="30" height="30"></td><td id="SH"></td></tr>
+              <tr><td><img src="../static/D.png" alt="D" width="30" height="30"></td><td id="SD"></td></tr>
+              <tr><td><img src="../static/C.png" alt="C" width="30" height="30"></td><td id="SC"></td></tr>
+            </table>
+          </div>
+      	</div>
+      </div>
+
+      <div id="error_container" class="container-right" style="visibility:hidden">
+        <p><br>
+        Error occurred: <span id="error_msg"></span><br>
+        On table number: <span id="error_table"></span><br>
+        On board number: <span id="error_board"></span><br>
+        UID: <span id="error_uid"></span><br>
+        Current tricks status: <br><span id="error_tricks"></span><br>
+        Resolve the problem, edit the tricks below and click Send!<br>
+            W<textarea id="error_solutionW" rows="2" cols="60" class="solution" autocomplete="off"></textarea><br>
+            N<textarea id="error_solutionN" rows="2" cols="60" class="solution" autocomplete="off"></textarea><br>
+            E<textarea id="error_solutionE" rows="2" cols="60" class="solution" autocomplete="off"></textarea><br>
+            S<textarea id="error_solutionS" rows="2" cols="60" class="solution" autocomplete="off"></textarea><br>
+        <button type="submit" onclick="sendSolution()">Send!</button>
+        </p>
+      </div>
+      <div class="container2">
+        <div class="tricks">
+            <table id="tabela">
+                    <tr>
+                        <th>trick no</th>
+                        <th>N</th>
+                        <th>E</th>
+                        <th>S</th>
+                        <th>W</th>
+                    </tr>
+            </table>
+        </div>
+       </div>
+      <div>
+        <div id="container3">
+
+        </div>
+        <div id="container4">
+
+        </div>
+      </div>
+      <div>
+        <div id="container5">
+
+        </div>
+        <div id="container6">
+
+        </div>
+      </div>
+
+  </body>
+</html>
+
+<script>
+
+function getOnesSuitCards(player, suit){
+    if (player == 'N'){ var myCards = {{ north|safe }} }
+    else if (player == 'S'){ var myCards = {{ south|safe }} }
+    else if (player == 'E'){ var myCards = {{ east|safe }} }
+    else if (player == 'W'){ var myCards = {{ west|safe }} }
+    else {player = ''}
+
+    myCards = myCards.filter(word => word[1] == suit);
+    return displaySuit(myCards);
+}
+
+playersNames = ['N', 'S', 'E', 'W'];
+playersSuites = ['S', 'H', 'D', 'C'];
+
+playersNames.forEach(function(player){
+  playersSuites.forEach(function(suit){
+    el = document.getElementById(player + suit)
+    el.innerHTML = getOnesSuitCards(player, suit)
+  })
+})
+
+function displaySuit(cards){
+    var ret = ''
+    for (var i = 0; i < cards.length; i += 1) {
+        ret += cards[i].charAt(0);
+    }
+    return ret;
+}
+</script>

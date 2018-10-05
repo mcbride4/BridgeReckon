@@ -1,0 +1,153 @@
+koncepcja jak to ma wygladac:
+
+dostajemy tablice, np 
+
+{ "cards_played" : ["2H"],
+  "board" : 1,
+  "table" : 1, index=1 },
+
+{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C"],
+  "board" : 1,
+  "table" : 1, index=2 },
+
+{ "cards_played" : ["2H", "10S", "8S", "3S", "AH", "JH", "7H", "5H", "4H", "QD", "JD", "AC", "JC", "3C", "9h", "QH"],
+  "board" : 1, index=3 },
+
+przed rozpoczeciem rozgrywki musimy zdecydowac, jaki jest konrakt i kto rozgrywa, zeby wiedziec ktore karty ma dziadek, kto wistuje, jakie sa atuty, zeby wiedziec kto bierze lewe.
+
+trzeba teraz rozpatrywac przypadki:
+
+1. pojawia sie nowa karta
+a) dziadka
+b) nie-dziadka
+
+2. znika jakas karta
+a) dziadka?
+b) nie-dziadka?
+czy to rozroznienie jest potrzebne? jeszcze nie wiem
+
+potrzebna jest jakas tablica/slownik kart "already played" albo cos w tym rozdaniu, kwestia czy to rozbic na 4 (dla kazdego gracza), czy nie
+
+
+bardzo wazne zalozenie:
+jezeli jakas karta zniknela, to jeszcze nie znaczy, ze zostala zagrana. musi sie ona nie pojawic w paru nastepnych klatkach raczej. jezeli sie pojawi, to gorzej.
+
+
+trzeba zakodzic to, ze karty maja byc zagrywane w lewach, czyli musza schodzic rownomiernie od kazdego z graczy.
+trzeba tez zakodzic to, kto w danym momencie ma wychodzic (kto wzial lewe).
+musi byc wiec znany na poczatku kontrakt.
+
+
+
+czyli moze karty podzielimy sobie na takie:
+niezagrane,
+kandydanci - czekajace na potwierdzenie, ze sa zagrane,
+zagrane
+
+po co w ogole robic tych kandydatow? bo jak na stole sie pojawi karta, ktora ma byc zagrana przez goscia ktory gra w kolejnosci po dziadku, to nie mozemy jej tak od razu zagrac, bo nie zniknela nam zadna karta dziadka, wiec nie mozemy nic dolozyc ze stolu, a kolejnosc zagran musi byc dobra.
+
+co jesli jakas karta z zagranych pojawi sie znowu na stole? problemik, ale na razie bedziemy zakladac, ze goscie moze sobie odkryli ostatnia lewe czy cos, bo swego rodzaju walidacja bedzie juz przy kandydatach.
+
+kiedy karta przechodzi do kandydatow?
+kiedy sie pojawia na stole (i nie jest karta dziadka)
+kiedy znika ze stolu (i jest karta dziadka)
+
+kiedy nastepuje walidacja? i jak?
+
+karty mozemy zagrywac tak, ze mozna je dokladac (kandydatow) do momentu, az nie bedzie kolej dziadka (i pozniej wszystkie dolozyc z koncem lewy), albo wszystkie na raz, jak karta dziadka zniknie.
+
+czy walidujemy to, ze karta musi byc zagrana do koloru? przydaloby sie, ale to w dalszej kolejnosci raczej. nie jest to na pewno priorytet.
+
+co w ogole ma dostawac skrypt? i jak przechowywac te dane tymczasowo?
+dostajemy co jakis czas tablice z kartami, ktore znajduja sie na stole. przydaloby sie, zeby skrypt mial dostep do calego przebiegu rozdania, zeby sobie tam mogl sprawdzac co sie dzieje. oprocz tego musi gdzies trzymac dane na temat aktualnego rozdania. czy do tego wszystkiego ma myc dostep przez api, czy przez jakas baze danych, czy jeszcze inaczej? nie wiem, w pliku czy cos. czy ten skrypt bedzie caly czas szedl i bedzie sobie to trzymal w jakims slowniku?
+
+
+na poczatek mozna by bylo napisac skrypt, ktory dostanie caly przebieg rozdania i bedzie sobie musial rozkminiac po kolei co sie stalo, kto zagral itp, dopiero pozniej przeniesc to do "real time".
+
+
+
+update:
+jak rozwiazac problem, kiedy pojawia sie nowa karta, albo znikaja jakies karty, czy nalzea one odo aktualnej, nastepnej czy poprzedniej lewy.
+gdy pojawia sie karta, trzeba sprawdzic w jakim stanie jest aktualna lewa. jezeli nie ma zadnych kart w aktualnej lewie, to ja dodajemy.
+jezeli pojawia sie na raz 2-3 karty, to probojemy je dodac wszystkie i mamy nadzieje, ze nie sa to karty tego samego gracza. jezeli sa, to na razie zwracamy blad. albo probujemy dodac do nastepnej lewy, z nadzieja , ze aktualna sie zakonczy.
+jezeli pojawi sie karta dziadka, jest traktowana osobno.
+jezeli w biezacej lewie jest juz jakas karta, sprawdzamy czy ta ktora sie pojawila, jest tego samego gracza. jezeli tak to pizda, chyba ze pojawilo sie kilka kart na raz i z pozostalych mozemy wybrac cos tak, zeby zakonczyc poprzednia lewe i zaczac nastepna.
+
+jezeli w biezacej lewie mamy juz 3 karty, musimy cos sprobowac zagrac z dziadka, bo tam chyba bedzie gorzej.
+
+jezeli zniknie ze stolu karta nie-dziadka, to chcemy zamknac lewe, ktora byla biezaca przed chwila. to powinno byc swego rodzaju potwierdzenie, ze dana karta byla zagrana, i juz lewa zostala zakryta.
+
+jezeli zniknie ze stolu karta dziadka, chcemy ja dodac do biezacej lewy.
+
+jezeli w biezacej lewie mamy 4 karty, przenosimy ja do zagranych na koniec tablicy czy czegos tam przechowujacego cala rozgrywke.
+
+
+
+Dobra. co dalej?
+Dostajemy rozkład, ładujemy go na stronę - to działa. Odpalamy appRunner, który co 2 sekundy pobiera z endpointu snapshots/lasts 2 ostatnie snapshoty. Jest skrypt, który co
+2 sekundy wysyła curlem na endpoint snapshots te karty, które zczytał z obrazka. Takie curle będzie wysyłać docelowo apka postawiona na raspberry.
+Teraz ten appRunner, jak dostanie te 2 snapshoty to analizuje co sie stało. Wychodzi mu, że jakieś karty zostały zagrane lub nie i wysyła to na endpoint tricks.
+Na endpoint tricks co 2 sekundy dla odmiany GETa wysyła stronka z UI, która sprawdza czy jakaś nowa lewa doszła.
+
+Jeżeli wszystko jest ok, to nie ma problemu :)
+
+Gorzej, jak coś nie jest okej. To znaczy, coś się pojebie w klasie dealHandler w ten sposób, że nie będzie w stanie zagrać lewy czy cos. Wtedy potrzebna jest interakcja człowieka.
+Myślę, że taka informacja może być przesyłana tak samo w zapytaniu POST na endpoint tricks. Jakas flaga typu "mam problem". Skrypt w JS sobie ta flage caly czas sprawdza i jak ma
+problem to wyswietla jakis smieszny komunikat. Powinna byc tam jakas opcja edycji bieżącej lewy, czy cos może. W sensie że jak dostanie info, ze jest problem to co ma biedny zrobić.
+Skrypty dalej lecą, nie ma możliwości interakcji. Gdzie ta interakcja powinna nastąpić? Chyba nie na etapie wyświetlania, tylko w klasie DealHandler. O, może jak ma problem to
+przerywa pętle i później trzeba mu dac jakoś możliwość wrócenia do ponownego wysyłania. Gorzej, jak np trochę czasu minie zanim człowiek zdąży wszystko poprawić i wtedy snapshots/lasts
+już będzie pokazywał coś nowego i on nie zdąży zagrać lewy. może powinienem brac jednak dane ze snapshots, trzymać index w pamieci i później jak człowiek coś poprawi, to wracam w
+odpowiednie miejsce? na ten moment tak to widze. czyli pętla do końca rozdania, a w środku pętla, którą może przerwać zgłoszenie błędu, wtedy jakiś input od człowieka?
+np. pokazanie kilku ostatnich snapshotow. tak sobie mysle, ze moze jednak przerzucic kod appRunnera do flaska? nie trzeba by było tylu zapytań http chyba robić, mamy wszystko lokalnie.
+Ale to jest jeszcze do zdecydowania. Na razie trzeba obsługiwać najprostsze błędy typu zagranie nie do koloru. Dodatkowo wrzucić mechanizm kto bierze lewę, kto wychodzi,
+na podstawie kontraktu mamy atuty. Do każdej lewy możemy dorzucać kolejność zagrywania kart i zwycięzcę lewy.
+
+Kwestia zasłaniania kart dziadka - co poradzić?
+jak by było wyjście z pętli - kwestia na jak długo i jak powrócić do odpowiedniego momentu.
+
+
+
+algorytm wykrywania błędów
+
+
+najpierw dla pietwszej lewy wybieramy goscia który zaczyna,
+jak zobaczymy jego kartę, to mamy kolor pierwszej lewy.
+teraz dla każdej dokładanej karty sprawdzamy, czy kolor się zgadza
+mozna to robić trochę inaczej - dopiero w momencie zakrywania się lewy.
+żeby to było uniwersalne dla następnym lew - w których zaczynać może dziadek i wtedy nie znamy na początku koloru lewy.
+jak to sprawdzamy to najpierw sprawdzamy czy gosc dał do koloru, a jeżeli nie, to sprawdzamy czy miał kartę do koloru.
+jak wszyscy dołożyli dobrze, to sprawdzamy która karta jest najwyższa,
+jak nie, a mieli to trzeba zrobić przerwę na interakcję człowieka
+
+
+
+-------------------------
+jak w ogóle działa ten program:
+views.py - serwer we flasku, odpalamy przez "python ~/git/BridgeReckon/src/flask/run.py"
+appRunner.py - skrypt odpytujący w pętli endpoint /snapshots serwera we flasku (views.py)
+z tego endpointa dostaje 2 ostatnie snapshoty, porównuje je i na tej podstawie wyciąga informację,
+czy zostały pomiędzy tymi snapshotami zagrane jakieś karty. Jeśli mu wyjdzie, że tak, to wysyła
+POSTa do tego samego serwera (views.py) na endpoint /tricks.
+W takzwanym międzyczasie wchodzimy sobie przez przeglądarkę na localhost:5000/table/<nr_stolu>
+Za wyświetlane tam dane odpowiada template table.html. W nim jest wywoływana co sekundę funkcja wysyłająca
+zapytanie na endpoint /tricks/<nr_stolu>/<nr_rozdania> i wyświetlająca te dane. Zagrywane w bieżącej lewie karty
+są widoczne na środku stołu, oprócz tego na dole jest historia każdego rozdania i każdej lewy, zawodnicy mają
+wyświetlone karty, które aktualnie mają w ręce (z każdą lewą ubywa im po jednej karcie).
+W tym panelu trzeba dopracować wygląd, zrobić historię z podziałem na konkretne rozdania.
+Dodatkowo zrobić miejsce na wyświetlenie panelu w przypadku kiedy skrypt appRunner.py zwróci błąd. W takim
+przypadku powinna zostać wyświetlona zawartość zmiennej "error_message" - tam pojawi się informacja na temat
+błędu, przez który program przerwał działanie oraz aktualny stan lew w rozdaniu. Jest to zwykły JSON z 4
+13-elementowymi listami dla zawodników N, E, S, W. W pierwszej wersji użytkownik może przeklejać ten JSON i
+uzupełniać odpowiednie miejsca w tablicy, w dalszym etapie powinien mieć możliwość wyklikania którą kartę zagrać
+w której lewie dla każdego z graczy. Trzeba mu też dać podgląd ostatnich klatek video ze stołu.
+W ogóle te klatki teraz chyba nie są przesyłane ani odbierane nigdzie. Powinny one być wysyłane przez apkę, która
+jest odpalana na raspberryPi i zapisywana do bazy mongoDb. Ta baza to w ogóle jest postawiona tak na słowo honoru,
+trzeba to zdecydowanie dopracować i ogarnąć czy te dane które mają być zapisywane są zapisywane i czy są dobrze
+zapisywane. Powinny tam być takie informacje: nr stołu, nr rozdania, zagrane karty w danej lewie, nr lewy, obrazek.
+
+Struktura bazy danych. W tym momencie są 2 kolekcje: snapshots i tricks. Trzeba zdecydować jaki
+zakres mają ogarniać te kolekcje. Czy tworzymy osobne kolekcje na każde a) rozdanie, b) segment rozdań,
+c) kilka segmentów rozdań, d) wydarzenie, e) jedna kolekcja na zawsze.
+Jak rozróżniać dane, które wysyłamy do serwera i odbieramy? Mamy rozróżnienie z raspberry_id, camera_id,
+przydałby się jeszcze np. timestamp, nr rozdania dla którego pobieramy dane, nr stołu (to akurat powinno
+być powiązane z raspberry_id w jakiś sposób).
